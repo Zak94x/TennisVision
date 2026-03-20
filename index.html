@@ -1071,7 +1071,7 @@ const DARK_PAGES = ['contact'];
 const APP_PAGES = ['app'];
 let currentPage = 'home';
 
-function navigate(page) {
+window.navigate = function navigate(page) {
   // Stop app if leaving
   if(currentPage === 'app' && page !== 'app') stopSess();
 
@@ -1108,8 +1108,8 @@ function navigate(page) {
 }
 
 // ── MOBILE MENU ──
-function openMobileMenu(){ document.getElementById('mobileMenu').classList.add('open'); }
-function closeMobileMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
+window.openMobileMenu = function openMobileMenu(){ document.getElementById('mobileMenu').classList.add('open'); }
+window.closeMobileMenu = function closeMobileMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
 
 // ── SCROLL ──
 window.addEventListener('scroll', () => {
@@ -1164,7 +1164,7 @@ let lastLandmarks=null, isAnalyzing=false;
 // Previous ankle positions for split-step detection
 let prevAnkleY = null, splitStepDetected = false;
 
-function selPro(btn, pro){
+window.selPro = function selPro(btn, pro){
   document.querySelectorAll('.pro-btn').forEach(b=>b.classList.remove('sel'));
   btn.classList.add('sel'); selProVal=pro;
 }
@@ -1313,7 +1313,7 @@ function onResults(res){
   }
 }
 
-async function startSess(){
+window.startSess = async function startSess(){
   try{
     stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:facing,width:{ideal:1280},height:{ideal:720}},audio:false});
     const v=document.getElementById('videoEl'),c=document.getElementById('poseCanvas');
@@ -1331,7 +1331,7 @@ async function startSess(){
   }catch(e){alert('Caméra inaccessible. Autorise l\'accès dans Chrome.');}
 }
 
-async function flipCam(){
+window.flipCam = async function flipCam(){
   facing=facing==='user'?'environment':'user';
   if(camera)camera.stop();
   if(stream)stream.getTracks().forEach(t=>t.stop());
@@ -1346,7 +1346,7 @@ async function flipCam(){
   }catch(e){facing=facing==='user'?'environment':'user';}
 }
 
-function stopSess(){
+window.stopSess = function stopSess(){
   if(camera){camera.stop();camera=null;}
   if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}
   if(autoInt){clearInterval(autoInt);autoInt=null;isAuto=false;}
@@ -1366,7 +1366,7 @@ function stopSess(){
   setStatus('VEILLE',''); lastLandmarks=null;
 }
 
-function toggleAuto(){
+window.toggleAuto = function toggleAuto(){
   if(isAuto){
     clearInterval(autoInt);autoInt=null;isAuto=false;
     document.getElementById('autoBtn').innerHTML='⚡ Auto';
@@ -1546,11 +1546,11 @@ window.closeAuth = function closeAuth() {
   clearAuthMessages();
 }
 
-function closeAuthOnBg(e) {
+window.closeAuthOnBg = function closeAuthOnBg(e) {
   if (e.target === document.getElementById('authOverlay')) closeAuth();
 }
 
-function switchTab(tab) {
+window.switchTab = function switchTab(tab) {
   document.getElementById('formLogin').style.display  = tab === 'login'  ? 'block' : 'none';
   document.getElementById('formSignup').style.display = tab === 'signup' ? 'block' : 'none';
   document.getElementById('tabLogin').classList.toggle('on',  tab === 'login');
@@ -1578,7 +1578,7 @@ function showAuthOk(msg) {
 }
 
 // ── Login ─────────────────────────────────────────────────────
-async function doLogin() {
+window.doLogin = async function doLogin() {
   const email    = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
   if (!email || !password) return showAuthErr('Remplis tous les champs');
@@ -1608,7 +1608,7 @@ async function doLogin() {
 }
 
 // ── Signup ────────────────────────────────────────────────────
-async function doSignup() {
+window.doSignup = async function doSignup() {
   const name     = document.getElementById('signupName').value.trim();
   const email    = document.getElementById('signupEmail').value.trim();
   const password = document.getElementById('signupPassword').value;
@@ -1742,7 +1742,7 @@ function checkAppAccess() {
   document.getElementById('paywallTrial').textContent = '';
 }
 
-function paywallAction() {
+window.paywallAction = function paywallAction() {
   document.getElementById('paywallCta').onclick && document.getElementById('paywallCta').onclick();
 }
 
