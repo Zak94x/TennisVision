@@ -1512,7 +1512,7 @@ function renderNav(user) {
   const zone = document.getElementById('navAuth');
   if (!zone) return;
   if (!user) {
-    zone.innerHTML = '<button class="nav-app-btn" onclick="openAuth('login')">Connexion</button>';
+    zone.innerHTML = '<button class="nav-app-btn" onclick="openAuth(\'login\')">Connexion</button>';
     return;
   }
   const planLabel = planName(user.plan);
@@ -1815,3 +1815,4 @@ function escHtml(s) {
 
 </body>
 </html>
+
