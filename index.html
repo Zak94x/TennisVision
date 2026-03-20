@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>TennisIQ — Intelligence Biomécanique</title>
+<title>TennisVision — Intelligence Biomécanique</title>
 <meta name="description" content="Le premier coach IA biomécanique pour joueurs d'élite. Analyse temps réel, jeu de jambes, comparaison aux meilleurs.">
 <meta name="theme-color" content="#0a0a0a">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="TennisIQ">
+<meta name="apple-mobile-web-app-title" content="TennisVision">
 
 <!-- MediaPipe (only loaded when app is active) -->
 <script>
@@ -536,7 +536,15 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
 
 <!-- NAV -->
 <nav id="main-nav">
-  <span class="nav-logo" onclick="navigate('home')">TennisIQ</span>
+  <span class="nav-logo" onclick="window.navigate('home')" style="display:flex;align-items:center;gap:8px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" fill="#c8a951" opacity="0.15" stroke="#c8a951" stroke-width="1"/>
+        <path d="M3.5 8.5 Q8 12 3.5 15.5" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M20.5 8.5 Q16 12 20.5 15.5" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M8.5 3.5 Q12 8 15.5 3.5" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M8.5 20.5 Q12 16 15.5 20.5" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+      </svg>
+      TennisVision</span>
   <ul class="nav-links">
     <li><a onclick="navigate('technologie')" data-page="technologie">Technologie</a></li>
     <li><a onclick="navigate('analyse')" data-page="analyse">Analyse</a></li>
@@ -545,8 +553,8 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <li><a onclick="navigate('contact')" data-page="contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:12px;">
-    <div class="nav-auth" id="navAuth"><button class="nav-app-btn" onclick="openAuth('login')">Connexion</button></div>
-    <button class="nav-mobile-btn" onclick="openMobileMenu()">
+    <div class="nav-auth" id="navAuth"><button class="nav-app-btn" id="btnConnexion">Connexion</button></div>
+    <button class="nav-mobile-btn" id="btnHamburger">
       <div class="hamburger"><span></span><span></span><span></span></div>
     </button>
   </div>
@@ -565,7 +573,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <div class="eyebrow">Intelligence Biomécanique · Analyse Temps Réel</div>
     <h1 class="hero-title">Le tennis<br><em>réinventé</em><br>par l'IA</h1>
     <div class="hero-div"></div>
-    <p class="hero-sub">TennisIQ analyse chaque mouvement en temps réel. Squelette, jeu de jambes, angles articulaires, comparaison aux meilleurs — sur un simple smartphone.</p>
+    <p class="hero-sub">TennisVision analyse chaque mouvement en temps réel. Squelette, jeu de jambes, angles articulaires, comparaison aux meilleurs — sur un simple smartphone.</p>
     <div class="hero-actions">
       <button class="btn-black" onclick="goToApp()">Ouvrir l'app</button>
       <span class="btn-ghost-dark" onclick="navigate('technologie')">Découvrir la technologie</span>
@@ -607,7 +615,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
   </div>
 
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisIQ</span>
+    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
     <div class="footer-links">
       <a onclick="navigate('technologie')">Technologie</a>
       <a onclick="navigate('analyse')">Analyse</a>
@@ -615,7 +623,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
       <a onclick="navigate('about')">À propos</a>
       <a onclick="navigate('contact')">Contact</a>
     </div>
-    <div class="footer-copy">© 2026 TennisIQ</div>
+    <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
 
@@ -695,9 +703,9 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <button class="btn-cta reveal" onclick="goToApp()">Ouvrir l'app</button>
   </div>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisIQ</span>
+    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
     <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('contact')">Contact</a></div>
-    <div class="footer-copy">© 2026 TennisIQ</div>
+    <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
 
@@ -748,9 +756,9 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <button class="btn-cta reveal" onclick="goToApp()">Démarrer l'analyse</button>
   </div>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisIQ</span>
+    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
     <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('contact')">Contact</a></div>
-    <div class="footer-copy">© 2026 TennisIQ</div>
+    <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
 
@@ -820,16 +828,16 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
       <div class="reveal" style="margin-top:80px;text-align:center;padding:48px;background:var(--white);border:1px solid var(--lgrey);">
         <p class="s-eye" style="justify-content:center;display:flex;margin-bottom:12px">Essai gratuit</p>
         <h3 style="font-family:'Cormorant',serif;font-size:36px;font-weight:300;color:var(--black);margin-bottom:12px">1 mois offert<br><em style="font-style:italic;color:var(--gold)">sans condition</em></h3>
-        <p style="font-size:13px;font-weight:300;color:var(--grey);max-width:400px;margin:0 auto 28px;line-height:1.8">Testez TennisIQ pendant 30 jours. Aucune carte bancaire requise. Aucun engagement.</p>
+        <p style="font-size:13px;font-weight:300;color:var(--grey);max-width:400px;margin:0 auto 28px;line-height:1.8">Testez TennisVision pendant 30 jours. Aucune carte bancaire requise. Aucun engagement.</p>
         <button class="btn-black" onclick="openAuth('signup')">Démarrer l'essai gratuit</button>
       </div>
     </div>
   </section>
 
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisIQ</span>
+    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
     <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('analyse')">Analyse</a><a onclick="navigate('contact')">Contact</a></div>
-    <div class="footer-copy">© 2026 TennisIQ</div>
+    <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
 
@@ -846,7 +854,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
         <div>
           <p class="s-eye">Notre vision</p>
           <h1 class="s-title">L'excellence<br><em>accessible</em></h1>
-          <p class="s-body" style="margin-top:20px">TennisIQ est né d'une conviction simple : les outils d'analyse biomécanique réservés aux joueurs professionnels doivent être accessibles à tout club, tout coach, tout joueur ambitieux.</p>
+          <p class="s-body" style="margin-top:20px">TennisVision est né d'une conviction simple : les outils d'analyse biomécanique réservés aux joueurs professionnels doivent être accessibles à tout club, tout coach, tout joueur ambitieux.</p>
           <p class="s-body" style="margin-top:16px">Nous combinons les technologies les plus avancées — MediaPipe, intelligence artificielle — dans une interface qui fonctionne sur n'importe quel smartphone.</p>
         </div>
       </div>
@@ -860,7 +868,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
         <div class="about-val"><div class="av-title">Précision avant tout</div><div class="av-desc">Chaque conseil donné est basé sur une mesure réelle. Pas d'impressions, pas d'approximations — des angles en degrés, des données chiffrées.</div></div>
         <div class="about-val"><div class="av-title">Honnêteté technologique</div><div class="av-desc">Nous ne promettons que ce que la technologie peut réellement délivrer. Nous disons clairement ce qui est possible et ce qui ne l'est pas encore.</div></div>
         <div class="about-val"><div class="av-title">Accessibilité sans compromis</div><div class="av-desc">Un smartphone. C'est tout ce qu'il faut. Aucun capteur, aucun équipement spécialisé, aucune installation technique.</div></div>
-        <div class="about-val"><div class="av-title">Progression mesurable</div><div class="av-desc">Ce qui ne se mesure pas ne s'améliore pas. TennisIQ transforme chaque séance en données exploitables pour une progression réelle et visible.</div></div>
+        <div class="about-val"><div class="av-title">Progression mesurable</div><div class="av-desc">Ce qui ne se mesure pas ne s'améliore pas. TennisVision transforme chaque séance en données exploitables pour une progression réelle et visible.</div></div>
       </div>
     </div>
   </section>
@@ -871,9 +879,9 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <button class="btn-cta reveal" onclick="navigate('contact')">Prendre contact</button>
   </div>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisIQ</span>
+    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
     <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('contact')">Contact</a></div>
-    <div class="footer-copy">© 2026 TennisIQ</div>
+    <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
 
@@ -894,7 +902,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
         <div class="contact-info">
           <div class="c-info-item">
             <div class="c-info-label">Email</div>
-            <div class="c-info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8cefe3e2f8edeff8cce1f5f8e9e2e2e5ffe5fda2edfcfc">[email&#160;protected]</a></div>
+            <div class="c-info-value"><a href="mailto:Tennisvision@gmail.com">Tennisvision@gmail.com</a></div>
             <div class="c-info-sub">Réponse sous 24h</div>
           </div>
           <div class="c-info-item">
@@ -909,7 +917,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
           </div>
           <div class="c-info-item">
             <div class="c-info-label">App en ligne</div>
-            <div class="c-info-value">mytennisiq.app</div>
+            <div class="c-info-value">mytennisvision.app</div>
             <div class="c-info-sub">Accessible maintenant</div>
           </div>
         </div>
@@ -944,9 +952,9 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     </div>
   </section>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisIQ</span>
+    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
     <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('about')">À propos</a></div>
-    <div class="footer-copy">© 2026 TennisIQ</div>
+    <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
 
@@ -967,18 +975,17 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
   <div class="app-header">
     <div class="app-logo">
       <svg class="app-logo-mark" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="17" stroke="#d4b978" stroke-width="0.8"/>
-        <path d="M8 14 Q20 20 32 14" stroke="#d4b978" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <path d="M8 26 Q20 20 32 26" stroke="#d4b978" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <line x1="20" y1="3" x2="20" y2="37" stroke="#d4b978" stroke-width="1"/>
-        <circle cx="28" cy="13" r="4" fill="none" stroke="#d4b978" stroke-width="0.8"/>
-        <circle cx="28" cy="13" r="1.5" fill="#d4b978"/>
+        <circle cx="20" cy="20" r="17" fill="#c8a951" opacity="0.1" stroke="#c8a951" stroke-width="0.8"/>
+        <path d="M5 14 Q12 20 5 26" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M35 14 Q28 20 35 26" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M14 5 Q20 12 26 5" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M14 35 Q20 28 26 35" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
       </svg>
-      <div><div class="app-logo-text">TENNISIQ</div><div class="app-logo-sub">Elite Coach</div></div>
+      <div><div class="app-logo-text">TENNISVISION</div><div class="app-logo-sub">Elite Coach</div></div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;">
       <div class="app-status"><div class="sdot" id="sdot"></div><span id="stxt">VEILLE</span></div>
-      <button class="app-back-btn" onclick="navigate('home')">← Site</button>
+      <button class="app-back-btn" onclick="window.navigate('home')">← Site</button>
     </div>
   </div>
 
@@ -1173,7 +1180,7 @@ function buildPrompt(bio){
   const proLine = selProVal!=='aucun'
     ? `Compare PRÉCISÉMENT à un joueur de ${selProVal} : cite les caractéristiques biomécaniques de ce style et évalue la similitude dans "pro_comparaison".`
     : '';
-  return `Tu es TennisIQ, coach biomécanique d'élite. ${proLine}
+  return `Tu es TennisVision, coach biomécanique d'élite. ${proLine}
 
 Données biomécaniques mesurées en temps réel :
 ${JSON.stringify(bio,null,2)}
@@ -1472,7 +1479,7 @@ function tick(){
 }
 
 // ══════════════════════════════════════════════════════════════
-// AUTH & STRIPE — TennisIQ
+// AUTH & STRIPE — TennisVision
 // ══════════════════════════════════════════════════════════════
 
 // ── State ────────────────────────────────────────────────────
@@ -1683,7 +1690,7 @@ function showCheckoutSuccess(plan) {
   const label = names[plan] || 'Premium';
   const toast = document.createElement('div');
   toast.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#0f0f0d;border:1px solid rgba(212,185,120,.4);color:#e8e8e0;font-family:DM Sans,sans-serif;font-size:13px;padding:14px 28px;z-index:999;border-radius:2px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.4);';
-  toast.innerHTML = '✓ &nbsp;<strong style="color:var(--gold)">' + label + '</strong> activé — bienvenue dans TennisIQ !';
+  toast.innerHTML = '✓ &nbsp;<strong style="color:var(--gold)">' + label + '</strong> activé — bienvenue dans TennisVision !';
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 5000);
   // Refresh user data
@@ -1770,7 +1777,7 @@ function escHtml(s) {
 <div class="auth-overlay" id="authOverlay" onclick="closeAuthOnBg(event)">
   <div class="auth-box">
     <button class="auth-close" onclick="closeAuth()">×</button>
-    <div class="auth-logo">TennisIQ</div>
+    <div class="auth-logo">TennisVision</div>
     <div class="auth-sub" id="authSubtitle">Coaching biomécanique d'élite</div>
 
     <div class="auth-tabs">
@@ -1813,6 +1820,19 @@ function escHtml(s) {
   </div>
 </div>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('btnConnexion');
+  if(btn) btn.addEventListener('click', function() {
+    if(window.openAuth) window.openAuth('login');
+  });
+  var ham = document.getElementById('btnHamburger');
+  if(ham) ham.addEventListener('click', function() {
+    if(window.openMobileMenu) window.openMobileMenu();
+  });
+});
+</script>
 </body>
 </html>
 
