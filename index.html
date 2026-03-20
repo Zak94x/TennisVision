@@ -525,18 +525,18 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="closeMobileMenu()">×</button>
-  <a onclick="navigate('home');closeMobileMenu()">Accueil</a>
-  <a onclick="navigate('technologie');closeMobileMenu()">Technologie</a>
-  <a onclick="navigate('analyse');closeMobileMenu()">Analyse</a>
-  <a onclick="navigate('tarifs');closeMobileMenu()">Tarifs</a>
-  <a onclick="navigate('about');closeMobileMenu()">À propos</a>
-  <a onclick="navigate('contact');closeMobileMenu()">Contact</a>
+  <button class="mobile-menu-close" data-action='closemenu'>×</button>
+  <a data-nav='home' data-closemenu='1'>Accueil</a>
+  <a data-nav='technologie' data-closemenu='1'>Technologie</a>
+  <a data-nav='analyse' data-closemenu='1'>Analyse</a>
+  <a data-nav='tarifs' data-closemenu='1'>Tarifs</a>
+  <a data-nav='about' data-closemenu='1'>À propos</a>
+  <a data-nav='contact' data-closemenu='1'>Contact</a>
 </div>
 
 <!-- NAV -->
 <nav id="main-nav">
-  <span class="nav-logo" onclick="window.navigate('home')" style="display:flex;align-items:center;gap:8px;">
+  <span class="nav-logo" data-nav='home' style="display:flex;align-items:center;gap:8px;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="12" cy="12" r="10" fill="#c8a951" opacity="0.15" stroke="#c8a951" stroke-width="1"/>
         <path d="M3.5 8.5 Q8 12 3.5 15.5" stroke="#c8a951" stroke-width="1.2" stroke-linecap="round" fill="none"/>
@@ -546,15 +546,15 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
       </svg>
       TennisVision</span>
   <ul class="nav-links">
-    <li><a onclick="navigate('technologie')" data-page="technologie">Technologie</a></li>
-    <li><a onclick="navigate('analyse')" data-page="analyse">Analyse</a></li>
-    <li><a onclick="navigate('tarifs')" data-page="tarifs">Tarifs</a></li>
-    <li><a onclick="navigate('about')" data-page="about">À propos</a></li>
-    <li><a onclick="navigate('contact')" data-page="contact">Contact</a></li>
+    <li><a data-nav='technologie' data-page="technologie">Technologie</a></li>
+    <li><a data-nav='analyse' data-page="analyse">Analyse</a></li>
+    <li><a data-nav='tarifs' data-page="tarifs">Tarifs</a></li>
+    <li><a data-nav='about' data-page="about">À propos</a></li>
+    <li><a data-nav='contact' data-page="contact">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:12px;">
-    <div class="nav-auth" id="navAuth"><button class="nav-app-btn" id="btnConnexion">Connexion</button></div>
-    <button class="nav-mobile-btn" id="btnHamburger">
+    <div class="nav-auth" id="navAuth"><button class="nav-app-btn" id="btnConnexion" data-action="login">Connexion</button></div>
+    <button class="nav-mobile-btn" id="btnHamburger" data-action="openmenu">
       <div class="hamburger"><span></span><span></span><span></span></div>
     </button>
   </div>
@@ -575,8 +575,8 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <div class="hero-div"></div>
     <p class="hero-sub">TennisVision analyse chaque mouvement en temps réel. Squelette, jeu de jambes, angles articulaires, comparaison aux meilleurs — sur un simple smartphone.</p>
     <div class="hero-actions">
-      <button class="btn-black" onclick="goToApp()">Ouvrir l'app</button>
-      <span class="btn-ghost-dark" onclick="navigate('technologie')">Découvrir la technologie</span>
+      <button class="btn-black" data-action='gotoapp'>Ouvrir l'app</button>
+      <span class="btn-ghost-dark" data-nav='technologie'>Découvrir la technologie</span>
     </div>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-num">33</div><div class="hstat-lbl">Points corporels</div></div>
@@ -611,17 +611,17 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <div class="cta-glow"></div>
     <h2 class="cta-title reveal">Prêt à<br><em>progresser ?</em></h2>
     <p class="cta-sub reveal">Rejoignez les premiers clubs à intégrer l'analyse biomécanique IA. Démo gratuite sans engagement.</p>
-    <button class="btn-cta reveal" onclick="navigate('contact')">Demander une démo</button>
+    <button class="btn-cta reveal" data-nav='contact'>Demander une démo</button>
   </div>
 
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
+    <span class="footer-logo" data-nav='home'>TennisVision</span>
     <div class="footer-links">
-      <a onclick="navigate('technologie')">Technologie</a>
-      <a onclick="navigate('analyse')">Analyse</a>
-      <a onclick="navigate('tarifs')">Tarifs</a>
-      <a onclick="navigate('about')">À propos</a>
-      <a onclick="navigate('contact')">Contact</a>
+      <a data-nav='technologie'>Technologie</a>
+      <a data-nav='analyse'>Analyse</a>
+      <a data-nav='tarifs'>Tarifs</a>
+      <a data-nav='about'>À propos</a>
+      <a data-nav='contact'>Contact</a>
     </div>
     <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
@@ -700,11 +700,11 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
   <div class="cta-bg">
     <div class="cta-glow"></div>
     <h2 class="cta-title reveal">Voir en<br><em>action</em></h2>
-    <button class="btn-cta reveal" onclick="goToApp()">Ouvrir l'app</button>
+    <button class="btn-cta reveal" data-action='gotoapp'>Ouvrir l'app</button>
   </div>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
-    <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('contact')">Contact</a></div>
+    <span class="footer-logo" data-nav='home'>TennisVision</span>
+    <div class="footer-links"><a data-nav='home'>Accueil</a><a data-nav='tarifs'>Tarifs</a><a data-nav='contact'>Contact</a></div>
     <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
@@ -727,7 +727,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
           <p class="s-eye">12 métriques</p>
           <h2 class="s-title" style="font-size:clamp(36px,4.5vw,64px)">Analyse<br><em>complète</em></h2>
           <p class="s-body" style="margin-top:16px">Chaque métrique est calculée à partir de données réelles — angles en degrés, distances, ratios. Aucune approximation.</p>
-          <button class="btn-black" style="margin-top:32px" onclick="goToApp()">Tester maintenant</button>
+          <button class="btn-black" style="margin-top:32px" data-action='gotoapp'>Tester maintenant</button>
         </div>
         <div class="reveal">
           <!-- Corps -->
@@ -753,11 +753,11 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
   <div class="cta-bg">
     <div class="cta-glow"></div>
     <h2 class="cta-title reveal">Tout ça,<br><em>maintenant</em></h2>
-    <button class="btn-cta reveal" onclick="goToApp()">Démarrer l'analyse</button>
+    <button class="btn-cta reveal" data-action='gotoapp'>Démarrer l'analyse</button>
   </div>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
-    <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('contact')">Contact</a></div>
+    <span class="footer-logo" data-nav='home'>TennisVision</span>
+    <div class="footer-links"><a data-nav='home'>Accueil</a><a data-nav='tarifs'>Tarifs</a><a data-nav='contact'>Contact</a></div>
     <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
@@ -790,7 +790,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
             <li>Prévention blessures</li>
             <li>Support par email</li>
           </ul>
-          <button class="p-btn" onclick="startCheckout('solo')">Commencer</button>
+          <button class="p-btn" data-action='checkout-solo'>Commencer</button>
         </div>
         <div class="price-card feat">
           <div class="price-badge">Le plus choisi</div>
@@ -806,7 +806,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
             <li>Historique des séances</li>
             <li>Support prioritaire</li>
           </ul>
-          <button class="p-btn" onclick="startCheckout('club')">Commencer</button>
+          <button class="p-btn" data-action='checkout-club'>Commencer</button>
         </div>
         <div class="price-card">
           <div class="p-tier">Académie</div>
@@ -821,7 +821,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
             <li>API sur demande</li>
             <li>Onboarding dédié</li>
           </ul>
-          <button class="p-btn" onclick="startCheckout('academie')">Nous contacter</button>
+          <button class="p-btn" data-action='checkout-academie'>Nous contacter</button>
         </div>
       </div>
 
@@ -829,14 +829,14 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
         <p class="s-eye" style="justify-content:center;display:flex;margin-bottom:12px">Essai gratuit</p>
         <h3 style="font-family:'Cormorant',serif;font-size:36px;font-weight:300;color:var(--black);margin-bottom:12px">1 mois offert<br><em style="font-style:italic;color:var(--gold)">sans condition</em></h3>
         <p style="font-size:13px;font-weight:300;color:var(--grey);max-width:400px;margin:0 auto 28px;line-height:1.8">Testez TennisVision pendant 30 jours. Aucune carte bancaire requise. Aucun engagement.</p>
-        <button class="btn-black" onclick="openAuth('signup')">Démarrer l'essai gratuit</button>
+        <button class="btn-black" data-action='signup'>Démarrer l'essai gratuit</button>
       </div>
     </div>
   </section>
 
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
-    <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('analyse')">Analyse</a><a onclick="navigate('contact')">Contact</a></div>
+    <span class="footer-logo" data-nav='home'>TennisVision</span>
+    <div class="footer-links"><a data-nav='home'>Accueil</a><a data-nav='analyse'>Analyse</a><a data-nav='contact'>Contact</a></div>
     <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
@@ -876,11 +876,11 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
   <div class="cta-bg">
     <div class="cta-glow"></div>
     <h2 class="cta-title reveal">Rejoindre<br><em>l'aventure</em></h2>
-    <button class="btn-cta reveal" onclick="navigate('contact')">Prendre contact</button>
+    <button class="btn-cta reveal" data-nav='contact'>Prendre contact</button>
   </div>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
-    <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('contact')">Contact</a></div>
+    <span class="footer-logo" data-nav='home'>TennisVision</span>
+    <div class="footer-links"><a data-nav='home'>Accueil</a><a data-nav='tarifs'>Tarifs</a><a data-nav='contact'>Contact</a></div>
     <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
@@ -952,8 +952,8 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     </div>
   </section>
   <footer>
-    <span class="footer-logo" onclick="navigate('home')">TennisVision</span>
-    <div class="footer-links"><a onclick="navigate('home')">Accueil</a><a onclick="navigate('tarifs')">Tarifs</a><a onclick="navigate('about')">À propos</a></div>
+    <span class="footer-logo" data-nav='home'>TennisVision</span>
+    <div class="footer-links"><a data-nav='home'>Accueil</a><a data-nav='tarifs'>Tarifs</a><a data-nav='about'>À propos</a></div>
     <div class="footer-copy">© 2026 TennisVision</div>
   </footer>
 </div>
@@ -967,8 +967,8 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     <div class="paywall-icon">🎾</div>
     <div class="paywall-title" id="paywallTitle">Accès requis</div>
     <div class="paywall-sub" id="paywallSub">Crée un compte gratuit pour commencer ton analyse biomécanique.</div>
-    <button class="paywall-btn" id="paywallCta" onclick="paywallAction()">Essai gratuit — 30 jours</button>
-    <button class="paywall-login" id="paywallLogin" onclick="openAuth('login')">J'ai déjà un compte</button>
+    <button class="paywall-btn" id="paywallCta" data-action='paywall'>Essai gratuit — 30 jours</button>
+    <button class="paywall-login" id="paywallLogin" data-action='login'>J'ai déjà un compte</button>
     <div class="paywall-trial" id="paywallTrial"></div>
   </div>
 
@@ -985,7 +985,7 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
     </div>
     <div style="display:flex;align-items:center;gap:8px;">
       <div class="app-status"><div class="sdot" id="sdot"></div><span id="stxt">VEILLE</span></div>
-      <button class="app-back-btn" onclick="window.navigate('home')">← Site</button>
+      <button class="app-back-btn" data-nav='home'>← Site</button>
     </div>
   </div>
 
@@ -1044,10 +1044,10 @@ app-header{display:flex;align-items:center;justify-content:space-between;padding
   </div>
 
   <div class="controls">
-    <button class="btn-app btn-gold-app" id="startBtn" onclick="startSess()">▶ Démarrer</button>
-    <button class="btn-app btn-out" id="autoBtn" onclick="toggleAuto()" disabled>⚡ Auto</button>
-    <button class="btn-app btn-out" id="flipBtn" onclick="flipCam()" style="display:none">🔄</button>
-    <button class="btn-app btn-red" id="stopBtn" onclick="stopSess()" style="display:none">■ Stop</button>
+    <button class="btn-app btn-gold-app" id="startBtn" data-action='startsess'>▶ Démarrer</button>
+    <button class="btn-app btn-out" id="autoBtn" data-action='toggleauto' disabled>⚡ Auto</button>
+    <button class="btn-app btn-out" id="flipBtn" data-action='flipcam' style="display:none">🔄</button>
+    <button class="btn-app btn-red" id="stopBtn" data-action='stopsess' style="display:none">■ Stop</button>
   </div>
 
   <div class="feed-hdr">
@@ -1519,7 +1519,7 @@ function renderNav(user) {
   const zone = document.getElementById('navAuth');
   if (!zone) return;
   if (!user) {
-    zone.innerHTML = '<button class="nav-app-btn" onclick="openAuth(\'login\')">Connexion</button>';
+    zone.innerHTML = '<button class="nav-app-btn" data-action="login">Connexion</button>';
     return;
   }
   const planLabel = planName(user.plan);
@@ -1527,8 +1527,8 @@ function renderNav(user) {
   zone.innerHTML = `
     <span class="nav-user-name">${escHtml(user.name.split(' ')[0])}</span>
     <span class="${badgeCls}">${planLabel}</span>
-    <button class="nav-app-btn" onclick="goToApp()">App</button>
-    <button class="nav-signout" onclick="signOut()">Déconnexion</button>`;
+    <button class="nav-app-btn" data-action="gotoapp">App</button>
+    <button class="nav-signout" data-action="signout">Déconnexion</button>`;
 }
 
 function planName(p) {
@@ -1774,15 +1774,15 @@ function escHtml(s) {
 <!-- ══════════════════════════════════════════
      AUTH MODAL
 ══════════════════════════════════════════ -->
-<div class="auth-overlay" id="authOverlay" onclick="closeAuthOnBg(event)">
+<div class="auth-overlay" id="authOverlay" data-action='closeauthbg'>
   <div class="auth-box">
-    <button class="auth-close" onclick="closeAuth()">×</button>
+    <button class="auth-close" data-action='closeauth'>×</button>
     <div class="auth-logo">TennisVision</div>
     <div class="auth-sub" id="authSubtitle">Coaching biomécanique d'élite</div>
 
     <div class="auth-tabs">
-      <button class="auth-tab on" id="tabLogin" onclick="switchTab('login')">Connexion</button>
-      <button class="auth-tab" id="tabSignup" onclick="switchTab('signup')">Créer un compte</button>
+      <button class="auth-tab on" id="tabLogin" data-action='tabllogin'>Connexion</button>
+      <button class="auth-tab" id="tabSignup" data-action='tabsignup'>Créer un compte</button>
     </div>
 
     <div id="authErr" class="auth-err"></div>
@@ -1798,7 +1798,7 @@ function escHtml(s) {
         <label class="auth-label">Mot de passe</label>
         <input class="auth-input" type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
       </div>
-      <button class="auth-submit" id="btnLogin" onclick="doLogin()">Se connecter</button>
+      <button class="auth-submit" id="btnLogin" data-action='dologin'>Se connecter</button>
     </div>
 
     <!-- Signup form -->
@@ -1815,24 +1815,56 @@ function escHtml(s) {
         <label class="auth-label">Mot de passe (8 caractères min)</label>
         <input class="auth-input" type="password" id="signupPassword" placeholder="••••••••" autocomplete="new-password">
       </div>
-      <button class="auth-submit" id="btnSignup" onclick="doSignup()">Créer mon compte — 30 jours gratuits</button>
+      <button class="auth-submit" id="btnSignup" data-action='dosignup'>Créer mon compte — 30 jours gratuits</button>
     </div>
   </div>
 </div>
 
 
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var btn = document.getElementById('btnConnexion');
-  if(btn) btn.addEventListener('click', function() {
-    if(window.openAuth) window.openAuth('login');
+
+  function act(el) {
+    var a = el.dataset.action;
+    var n = el.dataset.nav;
+    var close = el.dataset.closemenu;
+
+    if (n) { window.navigate && window.navigate(n); }
+    if (close) { window.closeMobileMenu && window.closeMobileMenu(); }
+
+    if (a === 'login')        window.openAuth && window.openAuth('login');
+    if (a === 'signup')       window.openAuth && window.openAuth('signup');
+    if (a === 'closeauth')    window.closeAuth && window.closeAuth();
+    if (a === 'closeauthbg')  window.closeAuthOnBg && window.closeAuthOnBg(event);
+    if (a === 'tabllogin')    window.switchTab && window.switchTab('login');
+    if (a === 'tabsignup')    window.switchTab && window.switchTab('signup');
+    if (a === 'dologin')      window.doLogin && window.doLogin();
+    if (a === 'dosignup')     window.doSignup && window.doSignup();
+    if (a === 'signout')      window.signOut && window.signOut();
+    if (a === 'gotoapp')      window.goToApp && window.goToApp();
+    if (a === 'checkout-solo')     window.startCheckout && window.startCheckout('solo');
+    if (a === 'checkout-club')     window.startCheckout && window.startCheckout('club');
+    if (a === 'checkout-academie') window.startCheckout && window.startCheckout('academie');
+    if (a === 'paywall')      window.paywallAction && window.paywallAction();
+    if (a === 'startsess')    window.startSess && window.startSess();
+    if (a === 'stopsess')     window.stopSess && window.stopSess();
+    if (a === 'flipcam')      window.flipCam && window.flipCam();
+    if (a === 'toggleauto')   window.toggleAuto && window.toggleAuto();
+    if (a === 'openmenu')     window.openMobileMenu && window.openMobileMenu();
+    if (a === 'closemenu')    window.closeMobileMenu && window.closeMobileMenu();
+  }
+
+  document.body.addEventListener('click', function(e) {
+    var el = e.target.closest('[data-action],[data-nav]');
+    if (el) { e.preventDefault(); act(el); }
   });
-  var ham = document.getElementById('btnHamburger');
-  if(ham) ham.addEventListener('click', function() {
-    if(window.openMobileMenu) window.openMobileMenu();
-  });
+
 });
 </script>
+
 </body>
 </html>
+
 
