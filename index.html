@@ -1629,7 +1629,7 @@ async function doSignup() {
     tiqToken = data.token; tiqUser = data.user;
     localStorage.setItem('tiq_token', tiqToken);
     renderNav(tiqUser);
-    showAuthOk('✓ Compte créé ! 30 jours d'essai activés.');
+    showAuthOk("✓ Compte créé ! 30 jours d'essai activés.");
     setTimeout(() => { closeAuth(); afterAuthSuccess(); }, 1500);
   } catch (e) {
     showAuthErr('Erreur réseau — réessaie');
@@ -1709,7 +1709,7 @@ function checkAppAccess() {
   if (!tiqUser) {
     pw.style.display = 'flex';
     document.getElementById('paywallTitle').textContent = 'Connexion requise';
-    document.getElementById('paywallSub').textContent   = 'Crée un compte gratuit et analyse ta biomécanique dès aujourd'hui.';
+    document.getElementById('paywallSub').textContent   = "Crée un compte gratuit et analyse ta biomécanique dès aujourd'hui.";
     document.getElementById('paywallCta').textContent   = 'Créer un compte — 30 jours gratuits';
     document.getElementById('paywallCta').onclick       = () => openAuth('signup');
     document.getElementById('paywallLogin').style.display = 'block';
@@ -1735,7 +1735,7 @@ function checkAppAccess() {
   pw.style.display = 'flex';
   const daysStr = trialEnd ? ' Ton essai a expiré.' : '';
   document.getElementById('paywallTitle').textContent = 'Essai terminé';
-  document.getElementById('paywallSub').textContent   = 'Choisis un plan pour continuer à analyser tes mouvements.' + daysStr;
+  document.getElementById('paywallSub').textContent   = "Choisis un plan pour continuer à analyser tes mouvements." + daysStr;
   document.getElementById('paywallCta').textContent   = 'Voir les plans';
   document.getElementById('paywallCta').onclick       = () => { navigate('tarifs'); };
   document.getElementById('paywallLogin').style.display = 'none';
@@ -1815,4 +1815,5 @@ function escHtml(s) {
 
 </body>
 </html>
+
 
