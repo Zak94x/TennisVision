@@ -1529,7 +1529,7 @@ function planName(p) {
 }
 
 // ── Open / close auth modal ───────────────────────────────────
-function openAuth(tab = 'login', pendingPlan = null) {
+window.openAuth = function openAuth(tab = 'login', pendingPlan = null) {
   if (pendingPlan) _pendingPlan = pendingPlan;
   switchTab(tab);
   document.getElementById('authOverlay').classList.add('open');
@@ -1541,7 +1541,7 @@ function openAuth(tab = 'login', pendingPlan = null) {
   }, 100);
 }
 
-function closeAuth() {
+window.closeAuth = function closeAuth() {
   document.getElementById('authOverlay').classList.remove('open');
   clearAuthMessages();
 }
@@ -1649,7 +1649,7 @@ function afterAuthSuccess() {
 }
 
 // ── Sign out ──────────────────────────────────────────────────
-function signOut() {
+window.signOut = function signOut() {
   tiqToken = null; tiqUser = null;
   localStorage.removeItem('tiq_token');
   renderNav(null);
@@ -1657,7 +1657,7 @@ function signOut() {
 }
 
 // ── Stripe checkout ───────────────────────────────────────────
-async function startCheckout(plan) {
+window.startCheckout = async function startCheckout(plan) {
   if (!tiqUser) { openAuth('signup', plan); return; }
   launchCheckout(plan);
 }
@@ -1696,7 +1696,7 @@ function showCheckoutSuccess(plan) {
 }
 
 // ── App access gating ─────────────────────────────────────────
-function goToApp() {
+window.goToApp = function goToApp() {
   navigate('app');
   checkAppAccess();
 }
@@ -1815,3 +1815,4 @@ function escHtml(s) {
 
 </body>
 </html>
+
